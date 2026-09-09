@@ -31,8 +31,8 @@ export default function LandingPage() {
             you run a hotel, restaurant, or online store.
           </p>
           <div className="land-cta-row">
-            <Link to="/login" className="land-btn land-btn-primary">Ride with us</Link>
-            <Link to="/login" className="land-btn land-btn-ghost">Partner with us</Link>
+            <Link to="/become-rider" className="land-btn land-btn-primary">Ride with us</Link>
+            <Link to="/become-partner" className="land-btn land-btn-ghost">Partner with us</Link>
           </div>
           <p className="land-note">Currently onboarding riders and partners in Pune, Mumbai, and Bengaluru.</p>
         </div>
@@ -93,13 +93,13 @@ export default function LandingPage() {
             <p className="land-pass-kind">Earn as a rider</p>
             <h3>Delivery partners</h3>
             <p>Bring a bike, scooter, or auto. Go online when you want, get assigned nearby orders, get paid weekly.</p>
-            <Link to="/login" className="land-pass-link">Apply to ride</Link>
+            <Link to="/become-rider" className="land-pass-link">Apply to ride</Link>
           </div>
           <div className="land-pass">
             <p className="land-pass-kind">Plug in your business</p>
             <h3>Hotels, restaurants, sellers</h3>
             <p>Send us orders from your own system and get live status pushed straight back to it, the way you'd integrate any courier partner.</p>
-            <Link to="/login" className="land-pass-link">Register your business</Link>
+            <Link to="/become-partner" className="land-pass-link">Register your business</Link>
           </div>
         </div>
       </section>
