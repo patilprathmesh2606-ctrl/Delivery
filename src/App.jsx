@@ -31,7 +31,7 @@ function Home() {
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/Delivery">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
