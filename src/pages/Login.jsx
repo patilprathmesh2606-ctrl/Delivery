@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
+import GoogleButton from '../components/GoogleButton';
 
 export default function Login() {
+  const [showEmail, setShowEmail] = useState(false);
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(null);
@@ -20,20 +22,32 @@ export default function Login() {
   return (
     <div className="login-page">
       <h1>WadaGo</h1>
-      {sent ? (
-        <p>Check your email for a login link.</p>
-      ) : (
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="you@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button type="submit">Send login link</button>
-          {error && <p className="error">{error}</p>}
-        </form>
+      <p>Sign in to book a delivery or check your account.</p>
+
+      <GoogleButton />
+
+      {!showEmail && (
+        <button type="button" className="link-btn" onClick={() => setShowEmail(true)}>
+          Use email instead
+        </button>
+      )}
+
+      {showEmail && (
+        sent ? (
+          <p>Check your email for a login link.</p>
+        ) : (
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit">Send login link</button>
+            {error && <p className="error">{error}</p>}
+          </form>
+        )
       )}
     </div>
   );
