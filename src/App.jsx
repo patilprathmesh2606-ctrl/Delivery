@@ -24,8 +24,21 @@ function RequireRole({ allowed, children }) {
 }
 
 function Home() {
-  const { role, loading } = useAuth();
-  if (!loading && role) return <Navigate to={ROLE_HOME[role] ?? '/login'} replace />;
+  const { session, role, loading } = useAuth();
+  if (loading) return <p>Loading…</p>;
+  if (session && !role) {
+    return (
+      <div className="dashboard">
+        <h1>You're signed in — almost there</h1>
+        <p>
+          Your account doesn't have a role assigned yet, so there's no dashboard to show.
+          Ask an admin to add a row for you in the <code>profiles</code> table with the
+          right <code>role</code> (admin, manager, support, rider, or client).
+        </p>
+      </div>
+    );
+  }
+  if (role) return <Navigate to={ROLE_HOME[role] ?? '/login'} replace />;
   return <LandingPage />;
 }
 
