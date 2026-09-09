@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
 import RiderDashboard from './pages/RiderDashboard';
@@ -24,8 +25,8 @@ function RequireRole({ allowed, children }) {
 
 function Home() {
   const { role, loading } = useAuth();
-  if (loading) return <p>Loading…</p>;
-  return <Navigate to={role ? ROLE_HOME[role] ?? '/login' : '/login'} replace />;
+  if (!loading && role) return <Navigate to={ROLE_HOME[role] ?? '/login'} replace />;
+  return <LandingPage />;
 }
 
 export default function App() {
