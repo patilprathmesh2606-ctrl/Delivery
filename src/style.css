@@ -13,3 +13,46 @@ table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
 th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #ddd; }
 button { cursor: pointer; margin-left: 0.5rem; }
 .error { color: #c0392b; }
+
+.google-btn {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  padding: 0.7rem 1rem;
+  margin: 1rem 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.google-btn:hover { background: #f5f5f5; }
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #16213A;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0;
+  font-size: 0.9rem;
+}
+
+.apply-form { display: flex; flex-direction: column; gap: 1rem; max-width: 420px; }
+.apply-form label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; }
+.apply-form input, .apply-form select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.apply-form button {
+  margin-top: 0.5rem;
+  padding: 0.7rem;
+  background: #16213A;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
